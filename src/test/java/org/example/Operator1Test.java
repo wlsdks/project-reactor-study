@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
@@ -30,6 +31,7 @@ class Operator1Test {
                 .verifyComplete();
     }
 
+    @DisplayName("flatMap은 순서가 지켜지지 않고 비동기로 처리됨")
     @Test
     void fluxFlatMap() {
         StepVerifier.create(operator1.fluxFlatMap())
