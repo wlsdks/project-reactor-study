@@ -12,6 +12,10 @@ public class Publisher {
         return Flux.range(1,10).log();
     }
 
+    public Flux<String> startFlux2() {
+        return Flux.fromIterable(List.of("a", "b", "c", "d")).log();
+    }
+
     public Mono<Integer> startMono() {
 //        return Mono.just(1);
         return Mono.just(1).log();
@@ -19,6 +23,10 @@ public class Publisher {
 
     public Mono<?> startMono2() {
         return Mono.empty().log();
+    }
+
+    public Mono<?> startMono3() {
+        return Mono.error(new Exception("hello reactor"));
     }
 
 }
